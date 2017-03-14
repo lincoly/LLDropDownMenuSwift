@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
 s.name         = "LLDropDownMenuSwift"
-s.version      = "0.0.1"
+s.version      = "0.0.6"
 s.summary      = "下拉菜单"
 
 s.description  = <<-DESC
