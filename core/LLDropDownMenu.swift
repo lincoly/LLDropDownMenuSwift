@@ -45,6 +45,8 @@ class LLDropDownMenu: UIView {
     }
     var selectedIndexPaths : [LLIndexPath]! // 选中选项
     
+    let boundle = Bundle(url: Bundle(for: LLDropDownMenu.self).url(forResource: "LLResources", withExtension: "bundle")!)
+    
     // 展示的IndexPath
     fileprivate var showIndexPath: LLIndexPath?
     
@@ -114,7 +116,7 @@ class LLDropDownMenu: UIView {
         // 底部装饰条
         bottomImageView.frame = CGRect(x: frame.origin.x, y: frame.origin.y + frame.size.height, width: frame.size.width, height: MenuBottomImageHeight)
 
-        bottomImageView.image = UIImage(named: "icon_chose_bottom")
+        bottomImageView.image = UIImage(named: "icon_chose_bottom", in: boundle, compatibleWith: nil)
         
         // 阴影
         backGroundView.frame = CGRect(x: frame.origin.x, y: frame.origin.y + frame.size.height, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
@@ -376,8 +378,8 @@ extension LLDropDownMenu: UITableViewDataSource, UITableViewDelegate {
             
             // 设置箭头
             if let items = rowEntity.items , items.count > 0 {
-                let image = UIImage(named: "icon_chose_arrow_nor@2x")
-                let highlightImage = UIImage(named: "icon_chose_arrow_sel@2x")
+                let image = UIImage(named: "icon_chose_arrow_nor@2x", in: boundle, compatibleWith: nil)
+                let highlightImage = UIImage(named: "icon_chose_arrow_sel@2x", in: boundle, compatibleWith: nil)
                 
                 cell?.accessoryView = UIImageView(image: image , highlightedImage: highlightImage)
             } else {
@@ -397,8 +399,8 @@ extension LLDropDownMenu: UITableViewDataSource, UITableViewDelegate {
             
             // 设置箭头
             if let indexs = itemEntity.items, indexs.count > 0 {
-                let image = UIImage(named: "icon_chose_arrow_nor@2x")
-                let highlightImage = UIImage(named: "icon_chose_arrow_sel@2x")
+                let image = UIImage(named: "icon_chose_arrow_nor@2x", in: boundle, compatibleWith: nil)
+                let highlightImage = UIImage(named: "icon_chose_arrow_sel@2x", in: boundle, compatibleWith: nil)
                 
                 cell?.accessoryView = UIImageView(image: image , highlightedImage: highlightImage)
             } else {
